@@ -1,0 +1,32 @@
+1. Định nghĩa và Bản chất
+Song song hóa (Parallelization) là kỹ thuật thực hiện đồng thời nhiều thành phần 
+(gọi LLM, sử dụng công cụ, hoặc chạy sub-agent) thay vì đợi từng bước hoàn thành theo thứ tự.
+
+Mục tiêu chính: Giảm đáng kể tổng thời gian thực thi (latency), đặc biệt hiệu quả khi các tác 
+vụ thành phần có độ trễ cao (như gọi API hoặc truy vấn cơ sở dữ liệu).
+
+Nguyên tắc cốt lõi: Chỉ song song hóa những phần không phụ thuộc vào kết quả của nhau.
+
+3. Triển khai và Công cụ
+Yêu cầu kỹ thuật: Cần các framework hỗ trợ thực thi không đồng bộ (Asynchronous), 
+đa luồng (Multi-threading) hoặc đa tiến trình (Multi-processing).
+
+Các Framework phổ biến:
+LangChain (LCEL): Sử dụng các toán đồ để tạo nhánh thực thi cùng lúc.
+LangGraph: Cho phép định nghĩa nhiều node chạy song song từ một trạng thái chuyển đổi.
+Google ADK: Cung cấp cơ chế gốc (native) mạnh mẽ để quản lý và vận hành nhiều Agent cùng lúc, tăng khả năng mở rộng.
+
+4. Các ứng dụng thực tiễn tiêu biểu
+Mô hình này cực kỳ hữu ích trong các kịch bản sau:
+
+Thu thập thông tin: Tìm kiếm từ nhiều nguồn (tin tức, chứng khoán, mạng xã hội) cùng lúc.
+
+Phân tích dữ liệu: Chạy đồng thời phân tích sắc thái (sentiment), trích xuất từ khóa và phân loại dữ liệu trên một tập văn bản.
+
+Tương tác đa công cụ: Kiểm tra giá vé máy bay, phòng khách sạn và thời tiết đồng thời khi lên kế hoạch du lịch.
+
+Kiểm chứng (Validation): Kiểm tra định dạng email, số điện thoại và lọc từ ngữ nhạy cảm trong cùng một thời điểm.
+
+Xử lý đa phương thức (Multi-modal): Phân tích văn bản và hình ảnh của một bài đăng mạng xã hội song song để đưa ra kết luận nhanh hơn.
+
+Thử nghiệm A/B: Tạo ra nhiều phương án nội dung khác nhau cùng lúc để chọn ra kết quả tốt nhất.

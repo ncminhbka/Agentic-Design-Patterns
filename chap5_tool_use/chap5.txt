@@ -1,0 +1,24 @@
+Dưới đây là tóm tắt các ý chính quan trọng nhất trong Chương 5 về Tool Use (Function Calling) để bạn dễ dàng nắm bắt:
+
+1. Bản chất của Tool Use
+Tool Use là mô hình (pattern) cho phép AI Agent không chỉ dừng lại ở việc "trò chuyện" mà có thể tương tác với thế giới thực. Đây là cầu nối giữa khả năng lập luận của LLM và các hệ thống bên ngoài như API, cơ sở dữ liệu, hoặc thực thi mã nguồn.
+
+2. Quy trình 6 bước thực hiện (Workflow)
+Để một Agent sử dụng công cụ thành công, nó trải qua một chu kỳ khép kín:
+
+Tool Definition: Định nghĩa tên, mục đích và các tham số của công cụ cho LLM hiểu.
+
+LLM Decision: LLM nhận yêu cầu từ người dùng và quyết định xem có cần dùng công cụ nào không.
+
+Function Call Generation: LLM tạo ra một cấu trúc dữ liệu (thường là JSON) chứa tên công cụ và các đối số cần thiết.
+
+Tool Execution: Hệ thống (framework) thực hiện chạy công cụ đó với các đối số được cung cấp.
+
+Observation/Result: Kết quả từ công cụ được trả về cho Agent.
+
+LLM Processing: LLM đọc kết quả đó để trả lời người dùng hoặc quyết định bước tiếp theo.
+
+3. Phân biệt "Function Calling" và "Tool Calling"
+Function Calling: Khái niệm kỹ thuật về việc gọi các hàm mã nguồn cụ thể.
+
+Tool Calling (Khái niệm rộng hơn): Bao gồm cả việc gọi API phức tạp, truy vấn cơ sở dữ liệu, hoặc thậm chí là giao việc cho một Agent chuyên trách khác.

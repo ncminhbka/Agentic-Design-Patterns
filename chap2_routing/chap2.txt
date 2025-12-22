@@ -1,0 +1,12 @@
+1. Routing là gì? (Khái niệm cốt lõi)
+Routing (Điều hướng) là cơ chế đưa ra quyết định dựa trên điều kiện (conditional logic). 
+Nó cho phép hệ thống AI không chỉ chạy theo một kịch bản cố định mà có thể tự chọn con đường tiếp theo dựa trên:
+Ý định của người dùng (User intent).
+Trạng thái của môi trường.
+Kết quả của các bước xử lý trước đó.
+
+Có 4 cách để hệ thống AI quyết định xem nên đi hướng nào:
+LLM-based	Dùng chính AI để phân loại (Ví dụ: "Hãy trả về 'A' nếu là khiếu nại, 'B' nếu là mua hàng").
+Embedding-based	So sánh độ tương đồng về ngữ nghĩa giữa câu hỏi và các danh mục có sẵn.
+Rule-based	Dùng quy tắc cứng (If-else, từ khóa, Regex).
+ML Model-based	Dùng một mô hình phân loại (Classifier) nhỏ được huấn luyện riêng.

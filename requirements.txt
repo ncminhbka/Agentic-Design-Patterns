@@ -1,0 +1,8 @@
+langchain
+langchain-ollama
+python-dotenv
+langchain-core
+
+google-adk
+google-genai
+langgraph

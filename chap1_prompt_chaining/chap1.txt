@@ -1,0 +1,34 @@
+PROMPT CHAINING:
+Cơ chế hoạt động: Đầu ra (Output) của bước này sẽ trở thành đầu vào (Input) của bước 
+kế tiếp.
+
+3. Nguyên tắc hoạt động để đạt hiệu quả cao
+Để Prompt Chaining hoạt động trơn tru, văn bản nhấn mạnh hai yếu tố kỹ thuật:
+
+Phân rã tuần tự (Sequential Decomposition): Chia nhỏ tác vụ và gán vai trò cụ thể cho từng bước 
+(Ví dụ: Bước 1 là "Nhà phân tích", Bước 2 là "Người viết báo cáo").
+
+Dữ liệu đầu ra có cấu trúc (Structured Output): Đây là yếu tố sống còn. Dữ liệu chuyển 
+giao giữa các bước nên ở định dạng máy có thể đọc được (như JSON hoặc XML) thay vì văn bản tự nhiên, 
+để tránh sự mơ hồ.
+
+4. Context engineering
+Triết lý: Chất lượng đầu ra phụ thuộc vào sự phong phú của môi trường thông tin (context) 
+hơn là kiến trúc của mô hình.
+
+Cấu thành: Một ngữ cảnh tốt bao gồm: System prompt (chỉ dẫn hệ thống) + Retrieved documents (tài liệu tra cứu)
+ + Tool outputs (kết quả từ công cụ bên ngoài) + Implicit data (lịch sử, thói quen người dùng).
+
+ 5. Các trường hợp sử dụng (Use Cases) điển hình
+Prompt Chaining đặc biệt hữu ích cho các tác vụ:
+
+Xử lý thông tin: Trích xuất -> Tóm tắt -> Báo cáo.
+Trả lời câu hỏi phức tạp: Cần suy luận đa bước hoặc tổng hợp từ nhiều nguồn.
+Chuyển đổi dữ liệu: OCR văn bản -> Chuẩn hóa số liệu -> Tính toán.
+Tạo nội dung: Lên ý tưởng -> Dàn ý -> Viết nháp -> Hiệu đính.
+Lập trình: Lên kế hoạch -> Viết code -> Debug -> Viết tài liệu.
+
+6. Framework
+LangChain / LangGraph: Phổ biến nhất để quản lý chuỗi và luồng trạng thái.
+
+Google Agent Development Kit (ADK) / Crew AI.

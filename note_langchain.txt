@@ -1,0 +1,6 @@
+LangChain phân biệt rõ:
+
+HumanMessage
+AIMessage
+SystemMessage
+ToolMessage

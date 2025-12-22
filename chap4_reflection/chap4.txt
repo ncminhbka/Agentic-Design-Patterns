@@ -1,0 +1,30 @@
+1. Tổng quan về Reflection Pattern
+Reflection giới thiệu một vòng lặp phản hồi (feedback loop).
+
+Mục đích: Giúp Agent tự đánh giá, tự sửa lỗi (self-correction) và cải thiện chất lượng đầu ra thay vì chỉ thực hiện lệnh một lần rồi thôi.
+Cơ chế: Agent xem xét kết quả của chính mình (hoặc quy trình tạo ra nó) để tìm ra các điểm chưa tối ưu và hoàn thiện lại.
+
+2. Quy trình 4 Bước cốt lõi
+Quá trình Reflection thường diễn ra theo trình tự lặp lại:
+
+Execution (Thực thi): Agent tạo ra bản nháp hoặc kết quả ban đầu.
+Evaluation/Critique (Đánh giá): Phân tích kết quả dựa trên các tiêu chí (độ chính xác, phong cách, tính logic...).
+Refinement (Tinh chỉnh): Xác định cách cải thiện dựa trên đánh giá.
+Iteration (Lặp lại): Thực hiện lại công việc với các điều chỉnh mới cho đến khi đạt yêu cầu.
+
+3. Mô hình "Generator-Critic" (Người tạo - Người phê bình)
+Đây là cách triển khai hiệu quả nhất của Reflection, chia tách thành 2 vai trò logic để tránh "thiên kiến nhận thức" (cognitive bias) khi tự mình sửa bài mình:
+Producer Agent (Người tạo): Tập trung hoàn toàn vào việc tạo nội dung/giải pháp ban đầu.
+Critic Agent (Người phê bình): Đóng vai một "persona" khác (ví dụ: Chuyên gia kiểm lỗi, Kỹ sư cấp cao) để soi lỗi khách quan, chỉ ra điểm sai và đề xuất sửa đổi.
+
+4. Sự kết hợp với các thành phần khác
+Reflection hoạt động hiệu quả hơn khi kết hợp với:
+Goals (Mục tiêu - Chương 11): Mục tiêu đóng vai trò là "thước đo chuẩn" để Agent so sánh và tự đánh giá.
+Memory (Bộ nhớ - Chương 8): Cung cấp ngữ cảnh lịch sử, giúp Agent nhớ các lỗi đã gặp để không lặp lại và học hỏi qua từng vòng lặp.
+
+5. Các ứng dụng thực tế (Use Cases)
+Mô hình này đặc biệt hữu ích cho các tác vụ đòi hỏi độ chính xác cao:
+Viết sáng tạo: Viết nháp -> Review văn phong -> Viết lại (để bài viết trau chuốt hơn).
+Lập trình (Coding): Viết code -> Chạy thử/Tìm lỗi -> Sửa code (để code chạy ổn định).
+Giải quyết vấn đề phức tạp: Đề xuất giải pháp -> Đánh giá tính khả thi -> Điều chỉnh hướng đi.
+Tóm tắt thông tin: Tóm tắt -> So sánh với bản gốc -> Bổ sung ý thiếu.

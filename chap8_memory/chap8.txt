@@ -1,0 +1,8 @@
+Chapter 8: Memory Management
+Bộ nhớ ngắn hạn (Short-Term / Contextual Memory)
+Bộ nhớ ngắn hạn lưu trữ thông tin đang được xử lý trong phiên tương tác hiện tại. Với agent dùng LLM, 
+bộ nhớ này nằm trong context window, bao gồm các tin nhắn gần đây, phản hồi của agent, kết quả gọi công cụ và các suy luận nội bộ.
+
+Bộ nhớ dài hạn (Long-Term / Persistent Memory)
+Bộ nhớ dài hạn cho phép agent lưu trữ thông tin xuyên suốt nhiều phiên và thời gian dài. 
+Dữ liệu thường được lưu bên ngoài mô hình, như cơ sở dữ liệu, đồ thị tri thức hoặc vector database.
