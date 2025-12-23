@@ -1,0 +1,5 @@
+Sự khác biệt: Không giống như các hành vi phản ứng (reactive) hoặc tối ưu hóa trong một không gian có sẵn, 
+"Thăm dò và Khám phá" tập trung vào việc Agent chủ động tiến vào các vùng tri thức chưa biết, thí nghiệm các phương pháp mới và xác định các "ẩn số chưa biết" (unknown unknowns).
+
+Mục tiêu: Mở rộng sự hiểu biết và năng lực của Agent trong các lĩnh vực phức tạp và thay đổi nhanh chóng, 
+nơi các giải pháp lập trình sẵn không còn đủ.

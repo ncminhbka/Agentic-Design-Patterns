@@ -1,0 +1,77 @@
+1. Động cơ và mục tiêu của Multi-Agent Collaboration
+
+Kiến trúc tác tử đơn (monolithic agent) bị hạn chế khi xử lý các bài toán phức tạp, đa miền.
+Mô hình Multi-Agent Collaboration khắc phục hạn chế này bằng cách tổ chức hệ thống như một tập hợp các tác tử chuyên biệt cùng hợp tác.
+Cốt lõi của mô hình là phân rã nhiệm vụ (task decomposition):
+Mục tiêu cấp cao được chia thành các bài toán con.
+Mỗi bài toán con được giao cho tác tử có công cụ, dữ liệu hoặc năng lực suy luận phù hợp nhất.
+
+2. Vai trò của giao tiếp và phối hợp
+
+Hiệu quả của hệ đa tác tử không chỉ đến từ phân công lao động, mà phụ thuộc mạnh vào:
+Giao thức giao tiếp chuẩn hóa
+Ontology dùng chung
+Các cơ chế này cho phép tác tử:
+Trao đổi thông tin
+Ủy quyền nhiệm vụ
+Phối hợp hành động
+
+Mục tiêu là đảm bảo đầu ra cuối cùng nhất quán và mạch lạc.
+
+3. Lợi ích của kiến trúc đa tác tử
+
+Tính mô-đun cao: dễ thay thế, mở rộng từng tác tử.
+Khả năng mở rộng: thêm tác tử mới khi bài toán lớn hơn.
+Độ bền vững (robustness): lỗi của một tác tử không làm sập toàn hệ thống.
+Hiệu ứng hiệp đồng (synergy): hiệu năng tổng thể vượt trội so với một tác tử đơn lẻ.
+
+4. Các hình thức cộng tác phổ biến
+
+Sequential Handoffs: tác tử xử lý tuần tự theo pipeline.
+Parallel Processing: nhiều tác tử xử lý song song các phần khác nhau.
+Debate & Consensus: tác tử tranh luận để đánh giá và đi đến quyết định tốt hơn.
+Hierarchical Structures: tác tử quản lý phân công và tổng hợp kết quả.
+Expert Teams: tác tử đại diện cho các chuyên gia khác nhau (researcher, writer, editor…).
+
+Critic–Reviewer:
+    Nhóm tác tử tạo đầu ra ban đầu.
+    Nhóm tác tử khác đánh giá về tính đúng đắn, chất lượng, an toàn, đạo đức.
+    Đầu ra được chỉnh sửa dựa trên phản hồi.
+    Đặc biệt hiệu quả cho sinh code, viết nghiên cứu và kiểm tra logic.
+
+5. Thành phần cốt lõi của hệ đa tác tử
+
+Một hệ multi-agent thường bao gồm:
+Định nghĩa vai trò và trách nhiệm của từng tác tử
+Kênh giao tiếp giữa các tác tử
+Quy trình tương tác / luồng nhiệm vụ điều phối sự hợp tác
+Các framework như CrewAI và Google ADK hỗ trợ việc hiện thực hóa mô hình này thông qua cấu trúc hóa tác tử, nhiệm vụ và tương tác.
+
+6. Ứng dụng tiêu biểu
+Nghiên cứu & phân tích phức tạp
+Phát triển phần mềm (phân tích yêu cầu, sinh code, test, viết tài liệu)
+Sáng tạo nội dung (marketing, thiết kế, truyền thông)
+Phân tích tài chính
+Hỗ trợ khách hàng và xử lý leo thang vấn đề
+Tối ưu chuỗi cung ứng
+Phân tích mạng và khắc phục sự cố tự động
+
+7. Mô hình quan hệ và giao tiếp giữa các tác tử
+
+Các mô hình chính:
+Single Agent: đơn giản nhưng năng lực hạn chế.
+Network: tác tử ngang hàng, phân tán, bền vững nhưng khó điều phối.
+Supervisor: tác tử trung tâm điều phối, dễ quản lý nhưng có điểm lỗi đơn.
+Supervisor as a Tool: supervisor hỗ trợ tài nguyên thay vì chỉ huy cứng nhắc.
+Hierarchical: nhiều tầng quản lý, phù hợp bài toán lớn và phức tạp.
+Custom: kiến trúc tùy biến theo bài toán cụ thể, linh hoạt nhưng đòi hỏi thiết kế sâu.
+
+8. Kết luận
+
+Lựa chọn mô hình cộng tác là quyết định thiết kế then chốt.
+Cần cân nhắc:
+Độ phức tạp của bài toán
+Số lượng tác tử
+Mức độ tự chủ
+Yêu cầu về độ bền vững và chi phí giao tiếp
+Multi-Agent Collaboration là nền tảng cho trí tuệ hợp tác và sẽ tiếp tục là hướng phát triển trọng tâm của các hệ AI agentic trong tương lai.
