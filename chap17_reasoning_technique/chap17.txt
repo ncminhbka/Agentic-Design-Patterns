@@ -1,0 +1,78 @@
+1. Bản chất của Kỹ thuật Suy luận Nâng cao
+Tư duy đa bước: Thay vì chỉ phản xạ nhanh và đưa ra câu trả lời ngay lập tức, các kỹ thuật này cho phép Agent thực hiện các suy luận logic đa bước, giúp giải quyết các vấn đề phức tạp.
+
+Tăng cường tài nguyên khi suy luận (Inference-time Compute): Đây là nguyên tắc cốt lõi. Bằng cách dành thêm thời gian xử lý hoặc thêm các bước trung gian cho LLM, hệ thống sẽ đạt được độ chính xác, tính nhất quán và sự mạnh mẽ (robustness) cao hơn.
+
+Tính minh bạch: Làm cho quá trình tư duy bên trong của Agent trở nên rõ ràng (explicit), giúp con người có thể kiểm chứng và điều chỉnh.
+
+2. Kỹ thuật Chain-of-Thought (CoT - Chuỗi suy nghĩ)
+Đây là kỹ thuật quan trọng nhất được đề cập trong chương:
+
+Cơ chế: Hướng dẫn mô hình tạo ra một chuỗi các bước suy luận trung gian trước khi đưa ra kết quả cuối cùng.
+
+Cách thực hiện: * Sử dụng các ví dụ (few-shot) có trình bày các bước giải quyết.
+
+Hoặc đơn giản là dùng câu lệnh kích hoạt: "Hãy suy nghĩ từng bước một" (Think step by step).
+
+Lợi ích: Biến một bài toán khó thành các bài toán nhỏ dễ quản lý hơn. Đặc biệt hiệu quả với các tác vụ về toán học, lập luận logic và xử lý ký hiệu.
+
+3. Tree-of-Thought (ToT) - Suy luận dạng cây
+Đây là bước tiến hóa từ Chain-of-Thought (CoT), giúp AI xử lý những vấn đề có độ phức tạp cực cao.
+
+Cấu trúc phân nhánh: Thay vì đi theo một đường thẳng duy nhất, ToT cho phép mô hình khám phá nhiều lộ trình suy luận cùng lúc, tạo thành một cấu trúc hình cây.
+
+Các tính năng ưu việt:
+
+Backtracking (Quay lui): Nếu một nhánh suy luận dẫn đến ngõ cụt, Agent có thể quay lại bước trước đó để chọn một hướng đi khác.
+
+Đánh giá đa chiều: Mô hình có thể so sánh và đánh giá các lộ trình khác nhau trước khi đưa ra quyết định cuối cùng.
+
+Ứng dụng: Cực kỳ hiệu quả cho các tác vụ cần lập kế hoạch chiến lược và ra quyết định phức tạp, nơi một sai lầm ở bước trung gian có thể làm hỏng toàn bộ kết quả.
+
+4. Self-correction (Tự điều chỉnh / Tinh chỉnh)
+Kỹ thuật này đóng vai trò như một "bộ lọc kiểm soát chất lượng" nội bộ của Agent.
+
+Bản chất: Là quá trình Agent tự đánh giá nội dung mình vừa tạo ra hoặc các bước tư duy trung gian để tìm ra lỗ hổng, sai sót hoặc sự mơ hồ.
+
+Quy trình lặp lại (Iterative Loop):
+
+Drafting (Dự thảo): Tạo ra kết quả ban đầu.
+
+Reviewing (Xem xét): Đối chiếu với yêu cầu gốc và các tiêu chuẩn logic.
+
+Refining (Tinh chỉnh): Sửa lỗi và cải thiện chất lượng (ví dụ: thay đổi từ ngữ mạnh hơn, thêm emoji, sửa logic sai).
+
+Lợi ích: Đảm bảo kết quả cuối cùng đạt độ chính xác và tin cậy cao nhất trước khi trình diện người dùng. Nó giúp AI không chỉ "biết làm" mà còn "biết sai để sửa".
+
+5. PALMs & RLVR: Kết hợp Logic và Tính toán Chính xácPALMs (Program-Aided Language Models): 
+Kết hợp LLM với khả năng lập trình (như Python). Thay vì tự tính toán (dễ sai), AI viết code để giải quyết 
+các bài toán logic hoặc dữ liệu phức tạp. Kết quả từ code sau đó được dịch lại thành ngôn ngữ tự nhiên.
+RLVR (Reinforcement Learning with Verifiable Rewards): Phương pháp huấn luyện mô hình dựa trên các kết quả có 
+thể kiểm chứng (như đáp án toán học hoặc mã code chạy được). Điều này tạo ra các "mô hình suy luận" có khả năng
+tư duy dài hạn, tự sửa lỗi và thử sai mà không cần sự giám sát liên tục của con người.
+
+6. ReAct (Reasoning and Acting) - Suy luận và Hành độngĐây là mô hình tương tác cốt lõi của các Agent hiện đại:
+Cơ chế: Kết hợp CoT (suy luận nội tâm) với việc sử dụng công cụ bên ngoài.Vòng lặp: Tư duy (Thought) 
+$\rightarrow$ Hành động (Action) $\rightarrow$ Quan sát (Observation).
+Lợi ích: Agent không chỉ đưa ra câu trả lời tĩnh mà có thể tương tác với môi trường thực tế 
+(tra cứu database, gọi API), nhận phản hồi và điều chỉnh kế hoạch ngay lập tức.
+
+7. Cộng tác Đa Agent (CoD, GoD & MASS)Khi một Agent là không đủ, chúng ta cần một "hội đồng" AI:CoD 
+(Chain of Debates): Nhiều mô hình cùng thảo luận, phản biện và kiểm soát lẫn nhau để giảm thiểu định 
+kiến và tăng độ chính xác.GoD (Graph of Debates): Nâng cấp của CoD, coi các lập luận như các nút trong 
+một mạng lưới (đồ thị). Các lập luận có thể ủng hộ hoặc bác bỏ nhau, giúp tìm ra kết luận dựa trên cụm 
+lập luận vững chắc nhất.MASS (Multi-Agent System Search): Khung tối ưu hóa tự động thiết kế hệ thống đa 
+Agent. Thay vì con người tự thiết lập, MASS tự động tìm ra:Prompt tối ưu cho từng Agent thành phần.Cấu trúc
+ kết nối (Topology) hiệu quả nhất giữa các Agent.Prompt tổng thể cho toàn bộ quy trình làm việc.
+
+8. Định luật Tỷ lệ Thuận khi Suy luận (Scaling Inference Law)Đây là một nguyên lý mang tính thay đổi cuộc chơi:
+Nội dung: Hiệu suất của mô hình có thể cải thiện đáng kể nếu chúng ta cấp cho nó thêm "ngân sách tư duy" 
+(Thinking budget) tại thời điểm suy luận (Inference), thay vì chỉ phụ thuộc vào kích thước mô hình khi huấn 
+luyện.Ý nghĩa: Một mô hình nhỏ (như Gemini Flash) nếu được cho thêm thời gian để suy nghĩ, thử nhiều phương án 
+và tự kiểm tra có thể vượt qua một mô hình lớn chạy ở chế độ phản xạ nhanh.Deep Research: Ứng dụng thực tế của đ
+ịnh luật này. AI được giao một khoảng thời gian (ví dụ 5-10 phút) để liên tục tìm kiếm, phân tích lỗ hổng thông 
+tin, tìm kiếm bổ sung và cuối cùng mới tổng hợp báo cáo chuyên sâu.Quy tắc cốt lõi 
+
+
+(Key Takeaways)Càng khó càng cần nghĩ lâu: Cấp thêm tài nguyên tính toán khi suy luận là chìa khóa để giải quyết các tác vụ phức tạp.Hợp tác là sức mạnh: Hệ thống đa Agent (MAS) với cấu trúc được tối ưu hóa (MASS) luôn mạnh hơn một Agent đơn lẻ.Tương tác thực tế: Một Agent thực thụ phải biết dùng công cụ (ReAct) và dùng code (PALMs) để đảm bảo tính chính xác tuyệt đối.
+

@@ -1,0 +1,9 @@
+Cách tiếp cận chuẩn là tích hợp cơ chế học và thích nghi, biến agent tĩnh thành hệ thống động có 
+khả năng tiến hóa. Agent có thể tự cải thiện kiến thức và hành vi dựa trên dữ liệu và tương tác mới, 
+thông qua các kỹ thuật từ học tăng cường đến tự chỉnh sửa như trong mô hình Self-Improving Coding Agent (SICA). 
+Những hệ thống tiên tiến như AlphaEvolve của Google kết hợp LLM và thuật toán tiến hóa để khám phá các lời giải 
+hoàn toàn mới và hiệu quả hơn cho bài toán phức tạp. Nhờ học liên tục, agent có thể làm chủ nhiệm vụ mới và 
+thích nghi với môi trường thay đổi mà không cần lập trình lại thủ công.
+
+
+Đây là mẫu thiết yếu cho agent hoạt động trong môi trường luôn biến đổi hoặc đòi hỏi tính cá nhân hóa cao.

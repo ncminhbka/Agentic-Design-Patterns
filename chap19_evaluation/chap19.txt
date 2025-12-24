@@ -1,0 +1,55 @@
+1. Mục tiêu của Evaluation & Monitoring
+
+Đánh giá hiệu quả, hiệu suất và độ tuân thủ của AI agents trong môi trường thực tế.
+
+Khác với test truyền thống, agent hoạt động xác suất, nên cần đánh giá liên tục, không chỉ output cuối.
+
+Trọng tâm là:
+
+Metrics
+
+Feedback loop
+
+Monitoring & reporting
+
+2. Ứng dụng thực tế phổ biến
+
+Performance monitoring: accuracy, latency, token/cost, resource usage.
+
+A/B testing: so sánh các phiên bản agent hoặc chiến lược khác nhau.
+
+Compliance & safety audit: kiểm tra đạo đức, pháp lý, quy trình an toàn.
+
+Drift detection: phát hiện suy giảm chất lượng do thay đổi dữ liệu/môi trường.
+
+Anomaly detection: phát hiện hành vi bất thường hoặc nguy hiểm.
+
+Learning progress tracking: theo dõi quá trình học và cải thiện của agent.
+
+Enterprise governance: quản trị agent thông qua AI “Contracts”.
+
+3. Đánh giá trajectory (điểm then chốt)
+
+Không chỉ đánh giá kết quả cuối, mà cả chuỗi hành động (trajectory):
+
+Agent làm gì
+
+Dùng tool nào
+
+Thứ tự ra sao
+
+Có hiệu quả hay không
+
+So sánh trajectory thực tế với ground-truth trajectory.
+
+Các metric trajectory phổ biến:
+
+Exact match
+
+In-order match
+
+Any-order match
+
+Precision / Recall hành động
+
+Single-tool check

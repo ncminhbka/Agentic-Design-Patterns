@@ -1,0 +1,98 @@
+1. Vấn đề cốt lõi
+
+Trong môi trường phức tạp, agent phải đối mặt với:
+
+Nhiều hành động khả dĩ
+
+Mục tiêu xung đột
+
+Tài nguyên và thời gian giới hạn
+
+Nếu không có cơ chế ưu tiên, agent dễ:
+
+Hoạt động kém hiệu quả
+
+Chậm trễ
+
+Không đạt được mục tiêu chính
+
+2. Prioritization Pattern là gì?
+
+Là mẫu thiết kế agentic giúp agent:
+
+Đánh giá
+
+Xếp hạng
+
+Chọn hành động / nhiệm vụ tiếp theo
+
+Mục tiêu: tập trung nguồn lực vào việc quan trọng nhất tại mỗi thời điểm.
+
+3. Các thành phần cốt lõi của Prioritization
+
+Criteria definition (tiêu chí ưu tiên)
+Thường bao gồm:
+
+Urgency (độ khẩn cấp)
+
+Importance (mức độ ảnh hưởng tới mục tiêu chính)
+
+Dependencies (phụ thuộc)
+
+Resource availability (tài nguyên sẵn có)
+
+Cost / benefit
+
+User preference (với agent cá nhân hóa)
+
+Task evaluation
+
+Đánh giá từng task theo các tiêu chí
+
+Có thể dùng rule-based, scoring, hoặc LLM reasoning
+
+Selection / Scheduling logic
+
+Thuật toán chọn task tiếp theo
+
+Ví dụ: priority queue, planner, policy
+
+Dynamic re-prioritization
+
+Tự động điều chỉnh ưu tiên khi:
+
+Xuất hiện sự kiện mới
+
+Deadline thay đổi
+
+Môi trường biến động
+
+4. Các cấp độ ưu tiên
+
+Goal-level: chọn mục tiêu tổng thể
+
+Sub-task level: sắp xếp các bước trong plan
+
+Action-level: chọn hành động ngay lập tức
+
+➡️ Giúp agent hành xử thông minh, linh hoạt và bền vững trong môi trường nhiều mục tiêu.
+
+5. Ứng dụng thực tế tiêu biểu
+
+Customer support: ưu tiên sự cố nghiêm trọng
+
+Cloud computing: ưu tiên workload quan trọng
+
+Autonomous driving: an toàn > tối ưu khác
+
+Financial trading: ưu tiên theo rủi ro & lợi nhuận
+
+Project management: deadline & dependency
+
+Cybersecurity: ưu tiên threat nguy hiểm nhất
+
+Personal assistant: cá nhân hóa theo người dùng
+
+6. Rule of Thumb
+
+Sử dụng Prioritization khi agent phải tự quản lý nhiều task/mục tiêu xung đột trong môi trường động với tài nguyên hạn chế.

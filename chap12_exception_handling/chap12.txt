@@ -1,0 +1,116 @@
+1. Vấn đề cốt lõi
+
+AI agents khi hoạt động trong môi trường thực không thể tránh lỗi:
+
+Tool failure
+
+Network / API errors
+
+Dữ liệu không hợp lệ
+
+Service không khả dụng
+
+Nếu không có cơ chế xử lý lỗi:
+
+Agent dễ “crash”
+
+Hành vi không ổn định
+
+Không đủ tin cậy để triển khai thực tế
+
+2. Exception Handling and Recovery là gì
+
+Là design pattern giúp agent:
+
+Phát hiện lỗi
+
+Xử lý lỗi có kiểm soát
+
+Phục hồi về trạng thái ổn định
+
+Mục tiêu:
+
+Resilience (chịu lỗi)
+
+Reliability (độ tin cậy)
+
+Operational continuity (hoạt động liên tục)
+
+3. Tư duy cốt lõi của pattern
+
+Kết hợp:
+
+Proactive: chuẩn bị trước cho lỗi
+
+Reactive: phản ứng và phục hồi khi lỗi xảy ra
+
+Agent không chỉ “thông minh” mà phải ổn định và đáng tin
+
+4. Ba thành phần chính của pattern
+4.1 Error Detection (Phát hiện lỗi)
+
+Kiểm tra:
+
+Output tool sai format / vô nghĩa
+
+API error codes (404, 500…)
+
+Timeout, response quá chậm
+
+Output bất thường / không nhất quán
+
+Có thể dùng:
+
+Monitoring agent
+
+External observability systems
+
+4.2 Error Handling (Xử lý lỗi)
+
+Các chiến lược phổ biến:
+
+Logging: ghi lại chi tiết lỗi
+
+Retries: thử lại (cho lỗi tạm thời)
+
+Fallbacks: dùng phương án thay thế
+
+Graceful degradation: giảm chức năng nhưng không dừng hẳn
+
+Notification: báo cho người hoặc agent khác
+
+4.3 Recovery (Phục hồi)
+
+Mục tiêu: đưa hệ thống về trạng thái ổn định
+
+Bao gồm:
+
+State rollback: quay lại trạng thái an toàn
+
+Diagnosis: phân tích nguyên nhân
+
+Self-correction / replanning: điều chỉnh plan, prompt, logic
+
+Escalation: chuyển cho con người hoặc hệ thống cấp cao hơn
+
+5. Quan hệ với Reflection
+
+Exception có thể kích hoạt reflection loop:
+
+Phân tích vì sao thất bại
+
+Tinh chỉnh prompt / strategy
+
+Thử lại với cách tiếp cận tốt hơn
+
+Giúp agent học từ thất bại trong runtime
+
+8. Rule of Thumb
+
+Luôn dùng pattern này khi:
+
+Agent hoạt động trong môi trường động
+
+Có tool / API / network
+
+Độ tin cậy là yêu cầu quan trọng

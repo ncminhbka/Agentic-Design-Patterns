@@ -1,0 +1,117 @@
+Ý chính cần nắm – Model Context Protocol (MCP)
+1. Vấn đề MCP giải quyết
+
+LLM muốn trở thành agent hiệu quả phải:
+
+Truy cập dữ liệu thời gian thực
+
+Sử dụng phần mềm và hệ thống bên ngoài
+
+Cách tích hợp ad-hoc (custom từng tool):
+
+Phức tạp
+
+Không tái sử dụng
+
+Không mở rộng tốt
+
+Điều này làm agentic system khó scale và khó duy trì.
+
+2. MCP là gì
+
+MCP là chuẩn giao tiếp mở (open standard) giữa:
+
+LLM / agent
+
+Hệ thống bên ngoài (API, database, tool, dịch vụ)
+
+Đóng vai trò như universal interface cho agentic AI.
+
+3. Cách MCP hoạt động
+
+Dựa trên client–server architecture:
+
+MCP Server: expose
+
+Tools (hành động)
+
+Resources (dữ liệu)
+
+Prompts (template tương tác)
+
+MCP Client: ứng dụng/agent dùng LLM, discovery và gọi capability
+
+Client có thể discover động capability, không cần hard-code.
+
+4. Khi nào nên dùng MCP (Rule of Thumb)
+
+Dùng MCP khi:
+
+Hệ thống phức tạp, quy mô lớn, enterprise-grade
+
+Có nhiều tool, API, data source thay đổi theo thời gian
+
+Cần:
+
+Interoperability giữa nhiều LLM
+
+Reusability
+
+Không redeploy agent khi thêm tool mới
+
+Không cần MCP khi:
+
+App nhỏ
+
+Tool cố định, số lượng ít
+→ dùng direct tool/function calling là đủ.
+
+5. Lợi ích chính của MCP
+
+Chuẩn hóa giao tiếp LLM ↔ hệ thống ngoài
+
+Giảm chi phí tích hợp
+
+Tăng khả năng:
+
+Mở rộng
+
+Tái sử dụng
+
+Kết hợp nhiều workflow phức tạp
+
+Là nền tảng cho agentic workflows thực sự.
+
+6. Hệ sinh thái & công cụ liên quan
+
+ADK (Agent Development Kit):
+
+Dùng MCP server có sẵn
+
+Hoặc expose tool của mình qua MCP
+
+FastMCP:
+
+Đơn giản hóa việc xây MCP server (đặc biệt Python)
+
+MCP GenMedia Tools:
+
+Tích hợp dịch vụ gen media (Imagen, Veo, Chirp, Lyria)
+
+7. Kết luận cốt lõi
+
+MCP cho phép LLM:
+
+Tương tác hệ thống thật
+
+Truy cập dữ liệu động
+
+Thực thi hành động ngoài text
+
+Là thành phần nền tảng để xây dựng:
+
+AI agent tương tác
+
+Workflow tự động
+
+Hệ thống agent vượt xa chatbot truyền thống

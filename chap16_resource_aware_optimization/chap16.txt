@@ -1,0 +1,42 @@
+1. Bản chất của Resource-Aware Optimization
+Định nghĩa: Là khả năng của Agent trong việc chủ động theo dõi và quản lý các nguồn lực: Tính toán (Compute), Thời gian (Temporal) và Tài chính (Financial) trong quá trình vận hành.
+
+Sự khác biệt với Planning: * Planning: Tập trung vào việc xác định trình tự hành động (làm gì trước, làm gì sau).
+
+Resource-Aware: Tập trung vào việc đưa ra quyết định dựa trên ngân sách và hiệu suất (dùng model nào, dùng bao nhiêu tài nguyên).
+
+Sự đánh đổi (Trade-off): Sự cân bằng giữa chất lượng đầu ra (accuracy) và chi phí/thời gian (cost/latency).
+
+2. Các chiến lược tối ưu hóa cốt lõi
+Để vận hành hiệu quả, hệ thống thường sử dụng các kỹ thuật sau:
+
+Dynamic Model Switching (Chuyển đổi mô hình linh hoạt): * Dùng Model lớn (như Gemini Pro) cho các tác vụ suy luận phức tạp.
+
+Dùng Model nhỏ (như Gemini Flash) cho các tác vụ đơn giản hoặc gọi hàm (function calling) để tiết kiệm chi phí và giảm độ trễ.
+
+Contextual Pruning & Summarization: Cắt tỉa hoặc tóm tắt lịch sử hội thoại để giảm số lượng token, từ đó giảm chi phí và tránh quá tải ngữ cảnh.
+
+Fallback Mechanisms (Cơ chế dự phòng): Nếu mô hình chính bị lỗi hoặc quá tải, hệ thống tự động chuyển sang mô hình dự phòng (thường rẻ hơn) để đảm bảo dịch vụ không bị gián đoạn (Graceful Degradation).
+
+Adaptive Tool Use: Lựa chọn công cụ sử dụng dựa trên chi phí API và thời gian thực thi.
+
+3. Kiến trúc hệ thống Multi-Agent điển hình
+Một hệ thống tối ưu tài nguyên thường phối hợp 3 loại Agent:
+
+Router Agent (Agent điều hướng): Phân loại độ khó của yêu cầu để gửi đến Model phù hợp.
+
+Worker Agents (Agent thực thi): Các Model khác nhau (Pro, Flash) thực hiện nhiệm vụ theo chỉ định của Router.
+
+Critique Agent (Agent phản biện): Đánh giá chất lượng phản hồi và cung cấp dữ liệu để cải thiện logic điều hướng trong tương lai.
+
+4. Ứng dụng thực tế và Lợi ích
+Tối ưu chi phí: Tránh lãng phí tiền bạc vào các câu hỏi đơn giản bằng cách không dùng Model đắt tiền.
+
+Giảm độ trễ (Latency): Phản hồi nhanh hơn cho các tác vụ cần tính thời điểm.
+
+Tiết kiệm năng lượng: Đặc biệt quan trọng cho các thiết bị đầu cuối (Edge devices) có pin hạn chế.
+
+Đảm bảo độ tin cậy: Duy trì hoạt động ngay cả khi gặp giới hạn về hạn mức (rate limit) của API.
+
+Quy tắc áp dụng (Rule of Thumb)
+Hãy sử dụng pattern này khi bạn làm việc với ngân sách tài chính chặt chẽ, xây dựng các ứng dụng đòi hỏi tốc độ phản hồi cực nhanh, hoặc triển khai AI trên các thiết bị có phần cứng hạn chế. Đây là chìa khóa để chuyển từ một bản thử nghiệm (prototype) sang một hệ thống AI có khả năng mở rộng và bền vững về kinh tế.

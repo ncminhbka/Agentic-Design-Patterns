@@ -1,0 +1,13 @@
+Quy tắc áp dụng (Rule of Thumb)
+Hãy sử dụng mô hình Human-in-the-Loop khi bạn triển khai AI trong các lĩnh vực mà sai sót có thể 
+dẫn đến hậu quả nghiêm trọng về an toàn, tài chính hoặc đạo đức (Y tế, tài chính, luật pháp). 
+Đừng bao giờ để AI hoàn toàn tự chủ trong những tình huống đòi hỏi sự tinh tế và thấu cảm của con người.
+
+5. Ứng dụng thực tế
+Kiểm duyệt nội dung: AI lọc tin rác, con người xử lý các trường hợp nhạy cảm/mơ hồ.
+
+Xe tự hành: Con người tiếp quản lái xe trong điều kiện thời tiết cực đoan hoặc tình huống không dự đoán được.
+
+Tài chính & Pháp luật: AI quét tài liệu, nhưng con người quyết định việc phê duyệt khoản vay hoặc tuyên án.
+
+Chăm sóc khách hàng: Chatbot xử lý câu hỏi thường gặp, con người xử lý các khiếu nại gay gắt hoặc phức tạp.

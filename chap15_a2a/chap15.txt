@@ -1,0 +1,43 @@
+1. Giao thức A2A là gì?
+Định nghĩa: A2A là một tiêu chuẩn mở (open standard) dựa trên HTTP, cho phép các AI Agent được xây dựng từ các framework khác nhau (như Google ADK, LangGraph, CrewAI) có thể "nói chuyện" và hợp tác với nhau.
+
+Mục tiêu: Phá vỡ sự cô lập của các Agent đơn lẻ, tạo ra một hệ sinh thái AI có khả năng tương tác và cộng tác (interoperability) để giải quyết các tác vụ phức tạp mà một Agent không thể tự làm hết.
+
+2. Các thành phần cốt lõi của A2A
+Core Actors (Các thực thể chính):
+
+User: Người đưa ra yêu cầu.
+
+A2A Client (Agent khách): Agent đại diện cho người dùng để yêu cầu hành động.
+
+A2A Server (Agent từ xa): Agent cung cấp dịch vụ/kỹ năng cụ thể thông qua một điểm cuối (endpoint) HTTP.
+
+Agent Card (Căn cước Agent): Một file JSON chứa thông tin định danh, URL, phiên bản, các kỹ năng (skills) và yêu cầu bảo mật của Agent. Đây là "hồ sơ năng lực" để các Agent khác tìm kiếm và hiểu khả năng của nó.
+
+Agent Discovery (Khám phá): Cơ chế để Agent Client tìm thấy Agent Server (thông qua các đường dẫn chuẩn hóa, danh bạ tập trung hoặc cấu hình trực tiếp).
+
+3. Cơ chế tương tác (Interaction Mechanisms)
+A2A hỗ trợ nhiều cách giao tiếp tùy theo độ phức tạp của tác vụ:
+
+Đồng bộ (Synchronous): Gửi yêu cầu và đợi kết quả ngay lập tức (cho các tác vụ nhanh).
+
+Bất đồng bộ - Polling (Asynchronous): Gửi yêu cầu, nhận mã tác vụ (Task ID), sau đó định kỳ kiểm tra xem khi nào xong.
+
+Streaming (SSE): Nhận cập nhật theo thời gian thực (từng phần của kết quả) qua một kết nối duy trì liên tục.
+
+Push Notifications (Webhooks): Agent Server sẽ chủ động thông báo cho Client khi tác vụ hoàn thành (dành cho các tác vụ tốn rất nhiều thời gian).
+
+4. Phân biệt A2A và MCP (Model Context Protocol)
+MCP: Tập trung vào việc kết nối LLM với dữ liệu và công cụ bên ngoài.
+
+A2A: Tập trung vào việc phối hợp, ủy thác công việc và giao tiếp giữa các Agent với nhau.
+
+Hai giao thức này bổ trợ cho nhau để xây dựng hệ thống AI toàn diện.
+
+5. Bảo mật và Tính bền vững
+Bảo mật: Sử dụng mTLS (xác thực hai chiều), OAuth 2.0, API Keys và lưu nhật ký kiểm soát (Audit Logs) chi tiết.
+
+Modularity (Tính mô-đun): Cho phép xây dựng hệ thống theo dạng lắp ghép, nơi mỗi Agent chuyên môn hóa một lĩnh vực (ví dụ: một Agent chuyên thu thập dữ liệu, một Agent chuyên phân tích, một Agent chuyên viết báo cáo).
+
+Quy tắc áp dụng (Rule of Thumb)
+Hãy sử dụng pattern A2A khi bạn cần phối hợp nhiều Agent lại với nhau, đặc biệt là khi chúng được phát triển trên các nền tảng khác nhau. Nó cực kỳ hữu ích cho các quy trình làm việc tự động (workflow) phức tạp, nơi một Agent cần ủy quyền hoặc tìm kiếm kỹ năng từ các Agent "chuyên gia" khác.
